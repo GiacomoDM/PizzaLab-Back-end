@@ -1,14 +1,21 @@
 package it.synclab.pizzalab.ProductService;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "products")
 public class Product {
-	private long id;
+
+	@Id
+	private String id;
 	private String name;
 	private double price;
-	private long categoryId;	
-	
-	public Product() { }
-	
-	public Product(long id, String name, double price, long categoryId) {
+	private String categoryId;
+
+	public Product() {
+	}
+
+	public Product(String id, String name, double price, String categoryId) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -19,30 +26,29 @@ public class Product {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	public double getPrice() {
 		return price;
 	}
-	
+
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	
-	public long getCategoryId() {
+
+	public String getCategoryId() {
 		return categoryId;
 	}
-	
-	public void setCategoryId(long categoryId) {
+
+	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
 	}
-	
-	public long getId() {
+
+	public String getId() {
 		return id;
 	}
-	
-	
+
 }
