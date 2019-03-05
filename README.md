@@ -1,2 +1,2 @@
 # PizzaLab-Back-end
-Microservices base REST back-end for PizzaLab with Spring Framework
+Microservices based REST back-end for PizzaLab with Spring Framework
