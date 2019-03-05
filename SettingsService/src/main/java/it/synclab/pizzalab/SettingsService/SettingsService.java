@@ -1,7 +1,5 @@
 package it.synclab.pizzalab.SettingsService;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,12 +12,12 @@ public class SettingsService {
 	@Autowired 
 	private BaseAddressRepository baseAddressRepository;
 
-	public List<BaseAddress> getAddress() {
-		return this.baseAddressRepository.findAll();
+	public BaseAddress getAddress() {
+		return this.baseAddressRepository.findAll().get(0);
 	}
 
-	public List<DeliveryTimes> getTimes() {
-		return this.deliveryTimesRepository.findAll();
+	public DeliveryTimes getTimes() {
+		return this.deliveryTimesRepository.findAll().get(0);
 	}
 
 	public void updateAddress(BaseAddress baseAddress) {

@@ -1,13 +1,13 @@
 package it.synclab.pizzalab.SettingsService;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
 public class SettingsController {
 	
@@ -15,12 +15,12 @@ public class SettingsController {
 	private SettingsService settingsService;
 	
 	@RequestMapping("/baseAddress")
-	public List<BaseAddress> getAddress() {
+	public BaseAddress getAddress() {
 		return this.settingsService.getAddress();
 	}
 	
 	@RequestMapping("/deliveryTimes")
-	public List<DeliveryTimes> getTimes() {
+	public DeliveryTimes getTimes() {
 		return this.settingsService.getTimes();
 	}
 	
